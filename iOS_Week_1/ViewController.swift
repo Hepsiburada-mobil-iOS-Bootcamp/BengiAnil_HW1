@@ -26,11 +26,15 @@ class ViewController: UIViewController {
     @IBAction func basicsTest(_ sender: Any) {
         // please provide a couple of sample functionality for class, struct and enum use cases by creating your own modules. We provide you some sample class, enum and struct please provide your own.
         // The code below is just sample
-        let structObj = SampleStruct(title: "title", subTitle: "subTitle")
-        let classObj = SampleClass(name: "name", surName: "surname").setTitleObject(by: structObj)
-        classObj.display()
+        
+        // let structObj = SampleStruct(title: "title", subTitle: "subTitle")
+        // let classObj = SampleClass(name: "name", surName: "surname").setTitleObject(by: structObj)
+        // classObj.display()
+        
+        let employee = EmployoeeStruct(name: "Michael", surname: "Scott")
+        let employeeInfo = EmployeeClass(title: "Regional Manager").setPerson(by: employee)
+        
+        employeeInfo.display()
     }
-
-    
 }
 

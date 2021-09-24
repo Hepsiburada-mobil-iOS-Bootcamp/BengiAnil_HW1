@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365F198D26FE04D9006503BC /* EmployeeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F198C26FE04D9006503BC /* EmployeeStruct.swift */; };
+		365F198F26FE059E006503BC /* EmployeeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F198E26FE059E006503BC /* EmployeeClass.swift */; };
 		A7CF0A4126F7BEBF0049FA45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF0A4026F7BEBF0049FA45 /* AppDelegate.swift */; };
 		A7CF0A4326F7BEBF0049FA45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF0A4226F7BEBF0049FA45 /* SceneDelegate.swift */; };
 		A7CF0A4526F7BEBF0049FA45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF0A4426F7BEBF0049FA45 /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		365F198C26FE04D9006503BC /* EmployeeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeStruct.swift; sourceTree = "<group>"; };
+		365F198E26FE059E006503BC /* EmployeeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeClass.swift; sourceTree = "<group>"; };
 		A7CF0A3D26F7BEBF0049FA45 /* iOS_Week_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Week_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CF0A4026F7BEBF0049FA45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7CF0A4226F7BEBF0049FA45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		361DCCE126FD18E300F3DAFA /* DunderMufflin */ = {
+			isa = PBXGroup;
+			children = (
+				365F198C26FE04D9006503BC /* EmployeeStruct.swift */,
+				365F198E26FE059E006503BC /* EmployeeClass.swift */,
+			);
+			path = DunderMufflin;
+			sourceTree = "<group>";
+		};
 		A7CF0A3426F7BEBF0049FA45 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +171,7 @@
 		A7CF0A7B26F7CDC20049FA45 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				361DCCE126FD18E300F3DAFA /* DunderMufflin */,
 				A7CF0A8026F7CECE0049FA45 /* SampleClass.swift */,
 				A7CF0A8226F7CED40049FA45 /* SampleStruct.swift */,
 				A7CF0A8426F7CFD60049FA45 /* SampleEnum.swift */,
@@ -296,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CF0A7526F7C0680049FA45 /* AlgorithmViewController.swift in Sources */,
+				365F198F26FE059E006503BC /* EmployeeClass.swift in Sources */,
 				A7CF0A7826F7C5EB0049FA45 /* AlgorithmManager.swift in Sources */,
 				A7CF0A4526F7BEBF0049FA45 /* ViewController.swift in Sources */,
 				A7CF0A4B26F7BEBF0049FA45 /* iOS_Week_1.xcdatamodeld in Sources */,
@@ -305,6 +320,7 @@
 				A7CF0A4326F7BEBF0049FA45 /* SceneDelegate.swift in Sources */,
 				A7CF0A8526F7CFD60049FA45 /* SampleEnum.swift in Sources */,
 				A7CF0A7A26F7C5F50049FA45 /* AlgorithmProtocol.swift in Sources */,
+				365F198D26FE04D9006503BC /* EmployeeStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

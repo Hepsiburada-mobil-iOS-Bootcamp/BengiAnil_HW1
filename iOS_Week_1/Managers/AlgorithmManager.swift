@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AlgoruthmManager: AlgorithmProtocol {
+class AlgorithmManager: AlgorithmProtocol {
     
     // MARK: - Two Sum
     /*
@@ -27,8 +27,19 @@ class AlgoruthmManager: AlgorithmProtocol {
     }
     
     private func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        // I solved of the question for you guys :D :D :D
-        return [0, 1]
+        
+        var result: [Int] = []
+        
+        for i in 0..<nums.count {
+            for j in i+1..<nums.count {
+                let sum = nums[i] + nums[j]
+                if target == sum {
+                    result.append(i)
+                    result.append(j)
+                }
+            }
+        }
+        return result
     }
     
     // MARK: - IsPalindrome
@@ -38,13 +49,29 @@ class AlgoruthmManager: AlgorithmProtocol {
      Output: true
      Explanation: "amanaplanacanalpanama" is a palindrome.
      */
+    
     func isPalindromTest() {
         
-    }
-    
-//    func isPalindrome(_ s: String) -> Bool {
-//
-//    }
+        let str: String = "A man, a plan, a canal: Panama"
+        let result = isPalindrome(str)
+        print("result : \(result)")
+     }
+     
+     func isPalindrome(_ str: String) -> Bool {
+
+         let pattern = "[^A-Za-z0-9]+"
+         let lowercasedAlphanumericStr: String = str.lowercased().replacingOccurrences(of: pattern, with: "", options: [.regularExpression])
+         let reversedLowercasedAlphanumericStr = lowercasedAlphanumericStr.reversed()
+
+         if lowercasedAlphanumericStr == String(reversedLowercasedAlphanumericStr) {
+             return true
+         }
+         else {
+             return false
+         }
+         
+     }
+
     
     // MARK: - Valid Anagram
     /*
@@ -54,11 +81,27 @@ class AlgoruthmManager: AlgorithmProtocol {
      */
     func isAnagramTest() {
         
+        let s: String = "anagram"
+        let t: String = "nagaram"
+        
+        let result = isAnagram(s, t)
+        print("result : \(result)")
     }
     
-//    func isAnagram(_ s: String, _ t: String) -> Bool {
-//
-//    }
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        
+        if s.count == t.count {
+            let sSet = Set(s)
+            let tSet = Set(t)
+            
+            print(sSet.sorted())
+            print(tSet.sorted())
+            return true
+        }
+        else{
+            return false
+        }
+    }
     
     // MARK: - Contains Duplicate
     /*
@@ -70,11 +113,26 @@ class AlgoruthmManager: AlgorithmProtocol {
      */
     func duplicateTest() {
         
+        var nums = [1,2,3,1]
+        var result = containsDuplicate(nums)
+        print("result : \(result)")
+        
+        nums = [1,2,3,4]
+        result = containsDuplicate(nums)
+        print("result : \(result)")
     }
     
-//    func containsDuplicate(_ nums: [Int]) -> Bool {
-//            
-//    }
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+
+        for i in 0..<nums.count {
+            for j in i+1..<nums.count {
+                if nums[i] == nums[j] {
+                    return false
+                }
+            }
+        }
+        return true
+    }
     
     // MARK: - Merge Sorted Array
     /*
@@ -90,10 +148,26 @@ class AlgoruthmManager: AlgorithmProtocol {
      */
     func mergeArraysTest() {
         
+        var nums1 = [1,2,3,0,0,0]
+        let m = 3
+        let nums2 = [2,5,6]
+        let n = 3
+        
+        merge(&nums1, m, nums2, n)
     }
     
     private func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
-            
+        
+        for j in 0..<nums2.count {
+            for i in 0..<nums1.count {
+                if nums1[i] == 0 {
+                    nums1[i] = nums2[j]
+                    break
+                }
+            }
+        }
+        let result = nums1.sorted()
+        print(result)
     }
     
     // MARK: - Intersection of Two Arrays
@@ -105,11 +179,25 @@ class AlgoruthmManager: AlgorithmProtocol {
      */
     func arrayIntersectionTest() {
         
+        let nums1 = [1,2,2,1]
+        let nums2 = [2,2]
+        print("result : \(intersect(nums1, nums2))")
     }
     
-//    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
-//
-//    }
+    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+
+        var counter: [Int] = []
+
+        for i in nums1 {
+            for j in nums2 {
+                if i == j {
+                    counter.append(j)
+                    break
+                }
+            }
+        }
+        return counter
+    }
     
     // MARK: - Missing Number
     /*
@@ -122,11 +210,22 @@ class AlgoruthmManager: AlgorithmProtocol {
      */
     func missingNumberTest() {
         
+        let nums = [3,0,1]
+        print("result: \(missingNumber(nums))")
     }
     
-//    private func missingNumber(_ nums: [Int]) -> Int {
-//
-//    }
-    
-    
+    private func missingNumber(_ nums: [Int]) -> Int {
+        
+        let sortedNums = nums.sorted()
+        
+        for i in 0..<sortedNums.count+1 {
+            if sortedNums[i+1] != sortedNums[i]+1 {
+                return sortedNums[i]+1
+            }
+        }
+        
+        return -1
+    }
 }
+
+ 
